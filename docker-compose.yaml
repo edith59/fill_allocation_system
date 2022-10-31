@@ -1,0 +1,24 @@
+services:
+  aum_server:
+    build:
+      context: aum_server
+      dockerfile: Dockerfile
+  fill_server:
+    build:
+      context: fill_server
+      dockerfile: Dockerfile
+  controller_server:
+    build:
+      context: controller_server
+      dockerfile: Dockerfile
+    depends_on:
+      - aum_server
+      - fill_server
+  position_server:
+    build:
+      context: position_server
+      dockerfile: Dockerfile
+    depends_on:
+      - aum_server
+      - fill_server
+      - controller_server
