@@ -1,7 +1,7 @@
 <!--lint disable awesome-toc-->
 ## Getting started
 
-These instructions will get you through the bootstrap phase of running
+This instruction will get you through the bootstrap phase of running
 sample of containerized application with Docker Compose.
 
 ### Prerequisites
