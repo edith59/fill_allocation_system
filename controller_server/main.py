@@ -136,6 +136,7 @@ async def calculate_trade_positions() -> dict:
 
     # TODO repair here, so that values wll be wrapped to variables and algorithm could be executed
     # TODO change approach to take last account split if new trade fill come earlier than new AUM response
+    # TODO change approach to take overall number of stocks accumulated so far (not from previous transaction)
     accounts_split = await get_last_accounts()
     trade_fill = await get_last_fill()
     new_position_quantity = trade_fill['quantity']

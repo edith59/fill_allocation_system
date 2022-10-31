@@ -24,6 +24,7 @@ def get_previous_position(previous_positions: dict):
     headers = {
         'accept': 'application/json',
     }
+    # TODO add positions to DB
 
     requests.get('http://controller_server:8000/send_position_to_controller_server', headers=headers, json=previous_positions)
 
