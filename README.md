@@ -16,7 +16,7 @@ sample of containerized application with Docker Compose.
 
 1. Clone the repository
 ```console
-git clone 
+git clone https://github.com/edith59/fill_allocation_system.git
 ```
 
 2. Run docker-compose file
