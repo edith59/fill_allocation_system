@@ -10,9 +10,6 @@ INTERVAL = 10
 logging.basicConfig()
 logger = logging.getLogger('CONTROLLER_SERVER')
 logger.setLevel(logging.INFO)
-JSONObject = Dict[AnyStr, Any]
-JSONArray = List[Any]
-JSONStructure = Union[JSONArray, JSONObject]
 app = FastAPI()
 
 
@@ -182,7 +179,7 @@ async def get_last_fill(trade_fill: dict) -> dict:
 
 
 @app.get("/send_accounts_to_controller")
-async def get_last_accounts(accounts_split: JSONStructure = None) -> dict:
+async def get_last_accounts(accounts_split: dict) -> dict:
     """
     Get last accounts split from AUM server (interval 30secs)
     :param accounts_split: key,value pairs with account name and its associated random percentage share
@@ -196,7 +193,7 @@ async def get_last_accounts(accounts_split: JSONStructure = None) -> dict:
 
 
 @app.get("/send_position_to_controller_server")
-async def get_previous_allocated_position(positions: dict = None) -> dict:
+async def get_previous_allocated_position(positions: dict) -> dict:
     """
     Get trade positions from position server from the last transaction to calculate new stocks allocation in next
     algorithm round

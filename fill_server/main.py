@@ -24,7 +24,7 @@ app = FastAPI()
 @repeat_every(seconds=random_interval)
 #@repeat_every(seconds=10)
 @app.get("/send_fill_to_controller")
-async def send_to_controller():
+async def send_to_controller() -> dict:
     """
     Sends POST request at random interval time to controller server about trade fill with given stock name, price and
     quantity
