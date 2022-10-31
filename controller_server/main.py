@@ -214,12 +214,12 @@ async def get_previous_allocated_position(positions: dict) -> dict:
 
 
 @app.on_event("startup")
-@repeat_every(seconds=30, wait_first=True)
+@repeat_every(seconds=10, wait_first=True)
 @app.get("/send_position_to_position_server")
 async def send_positions():
     """
     Send trade positions to position server calculated based on accounts split get from AUM server and trade fill get
-    from Fill server
+    from Fill server. Repeat every 10 seconds
     :return: positions
     :type: dict
     return trade_positions = {
