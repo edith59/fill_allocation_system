@@ -22,7 +22,6 @@ app = FastAPI()
 
 @app.on_event("startup")
 @repeat_every(seconds=random_interval)
-#@repeat_every(seconds=10)
 @app.get("/send_fill_to_controller")
 async def send_to_controller():
     """
